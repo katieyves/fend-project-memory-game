@@ -58,6 +58,9 @@ function shuffle(array) {
     return array;
 }
 
+
+// displayCards shuffles all the cards and display them on the deck
+
 let displayCards = function() {
 	cards = shuffle(cards);
 	deck.innerHTML = "";
@@ -82,6 +85,8 @@ let displayCards = function() {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+ // show() shows the clicked card
+
 let show = function(e) {
 	if (e.target.classList.contains("card")) {
 		e.target.classList.add("open", "show");
@@ -90,6 +95,8 @@ let show = function(e) {
 		}
 	}
 }
+
+// checkMatch() checks if the cards are matched
 
 let checkMatch = function(e) {
 	e.target.addEventListener("transitionend", function(e) {
@@ -111,11 +118,16 @@ let checkMatch = function(e) {
 	})
 }
 
+
+// checkWin() checks if a user wins
+
 let checkWin = function() {
 	if (matchedCards.length === 16) {
 		gameOver();
 	}
 }
+
+//gameOver() shows a banner with results and stops timer
 
 let gameOver = function() {
 	banner.style.display = "block";
@@ -129,6 +141,9 @@ let gameOver = function() {
 	finalStars.textContent = stars;
 }
 
+// play() starts a game if the game hasn't been started, show clicked card and check matching
+// it's launched once a card is clicked
+
 let play = function(e) {
 	if (gameStarted === false) {
 		gameStarted = true;
@@ -137,6 +152,9 @@ let play = function(e) {
 	show(e);
 	checkMatch(e);
 }
+
+
+// restart() restarts a game and set all the results to zero and stars to 3
 
 let restart = function() {
 	openedCards = [];
@@ -149,6 +167,9 @@ let restart = function() {
 	displayCards();
 	showScores();
 }
+
+
+// showScores() shows number of moves, star rating
 
 let showScores = function() {
 	let moves = document.querySelector(".moves");
@@ -187,6 +208,9 @@ let showScores = function() {
 	}
 }
 
+
+// timeCount() counts seconds if the game is started
+
 let timeCount = function() {
 	if (gameStarted === true) {
 		time += 1;
@@ -194,6 +218,7 @@ let timeCount = function() {
 	}
 }
 
+// showTime() shows time
 
 let showTime = function() {
 	let min = document.querySelector(".min");
@@ -202,13 +227,19 @@ let showTime = function() {
 	sec.textContent = time%60 + " sec";
 }
 
+// playAgain() restarts a game after a user won
+
 let playAgain = function() {
 	restart();
 	banner.style.display = "none";
 }
 
+// shuffle cards for the first time
 
 displayCards();
+
+// events listeners for cards, restart button  and playAgain button
+
 deck.addEventListener("click", play);
 restartButton.addEventListener("click", restart);
 playAgainButton.addEventListener("click", playAgain)
