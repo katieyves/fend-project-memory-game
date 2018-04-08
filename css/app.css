@@ -63,12 +63,15 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transform: rotateY(0);
 }
 
 .deck .card.open {
-    transform: rotateY(0);
+    transform: rotateY(180deg);
     background: #02b3e4;
     cursor: default;
+    transition: transform 0.5s ease,
+                background 0.5s ease;
 }
 
 .deck .card.show {
@@ -79,6 +82,7 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    transform: rotateY(180deg);
 }
 
 /*
@@ -106,4 +110,41 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.banner {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.win {
+    width: 25%;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    background-color: whitesmoke;
+    text-align: center;
+    border: 5px solid rgb(61, 166, 186);
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 15% auto 0;
+}
+
+.win h2 {
+    color: rgb(61, 166, 186);
+}
+
+.playAgain {
+    background-image: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    min-height: 45px;
+    padding: 0 20px;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.min {
+    padding-left: 50px;
 }
