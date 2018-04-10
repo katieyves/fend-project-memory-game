@@ -2,30 +2,53 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Project](#project)
+* [Board](#board)
 * [Rules](#rules)
+* [License](#license)
 
-## Instructions
+## Project
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+The Memory Game Project is a part of the Front-End Web Developer Nanodegree Program.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Board
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+The board contains of 12 shuffled cards.
 
-## Contributing
+!(board)[img/board.jpeg]
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+If the cards are matched they remain opened and have green background:
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+!(matched cards)[img/matched.jpeg]
+
+Opened unmatched cards have blue background:
+
+!(opened unmatched card)[img/opened.jpeg]
+
+The panel above the board shows your current results: star rating, moves number and time.
+
+!(panel with results)[img/resultpanel.jpeg]
+
+The button !(restart)[img/restart.jpeg] restarts the game.
+
+After all the cards have been matched you can see a new window with your results and then you can play again by pressing the button !(play again button)[img/playagain.jpeg].
+
+!(Final results window)[img/winbanner.jpeg]
 
 
 ## Rules
 
-1. You win once all the cards have successfully been matched.
-2. You can see your time, stars and number of moves above the deck.
-3. If you take less than 13 moves, your rating will be 3 stars;
+1. You click on the cards trying to find ones with same icons.
+2. If two opened cards have same icons they remain opened.
+3. You win once all the cards have successfully been matched.
+4. You can see your time, stars and number of moves above the deck.
+5. If you take less than 13 moves, your rating will be 3 stars;
    If you take less than 17 moves, your rating will be 2 stars;
    If you take less than 21 moves, your rating will be 1 star.
-4. Opening of two matched or unmatched cards is counted as 1 move.
+6. Opening of two matched or unmatched cards is counted as 1 move.
+
+## License
+
+The content of this repository is licensed under a
+[Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/us/)
+

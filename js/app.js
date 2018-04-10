@@ -99,25 +99,27 @@ let show = function(e) {
 // checkMatch() checks if the cards are matched
 
 let checkMatch = function(e) {
-	document.querySelector(".deck").addEventListener("transitionend", function(e) {
-		console.log("end");
-		if (openedCards.length === 2) {
-			moveCounter += 1;
-			showScores();
-			if (openedCards[0].innerHTML == openedCards[1].innerHTML) {
-				for (card of openedCards) {
-					card.classList.add("match");
-					matchedCards.push(card);
+	e.target.addEventListener("transitionend", function(e) {
+		if(e.target === openedCards[1]) {
+			if (openedCards.length === 2) {
+				moveCounter += 1;
+				showScores();
+				if (openedCards[0].innerHTML == openedCards[1].innerHTML) {
+					for (card of openedCards) {
+						card.classList.add("match");
+						matchedCards.push(card);
+					}
+					checkWin();
 				}
-				checkWin();
+				for (card of openedCards) {
+					card.classList.remove("show", "open");
+				}			
+				openedCards = [];
 			}
-			for (card of openedCards) {
-				card.classList.remove("show", "open");
-			}
-			openedCards = [];
 		}
 	})
 }
+
 
 
 // checkWin() checks if a user wins
