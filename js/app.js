@@ -99,7 +99,8 @@ let show = function(e) {
 // checkMatch() checks if the cards are matched
 
 let checkMatch = function(e) {
-	e.target.addEventListener("transitionend", function(e) {
+	document.querySelector(".deck").addEventListener("transitionend", function(e) {
+		console.log("end");
 		if (openedCards.length === 2) {
 			moveCounter += 1;
 			showScores();
@@ -135,16 +136,25 @@ let gameOver = function() {
 	let finalTime = document.querySelector(".time");
 	let finalMoves = document.querySelector(".finalMoves");
 	let finalStars = document.querySelector(".finalStars");
+	let pluralStar = document.querySelector(".pluralStar");
 
 	finalTime.textContent = "Your time: " + Math.floor(time/60) + " min " + time%60 + " sec";
 	finalMoves.textContent = moveCounter;
 	finalStars.textContent = stars;
+
+	if (stars === 1) {
+		pluralStar.style.display = "none";
+	}
 }
 
 // play() starts a game if the game hasn't been started, show clicked card and check matching
 // it's launched once a card is clicked
 
 let play = function(e) {
+	let opened = document.querySelectorAll(".open");
+	if (opened.length >= 2) {
+		return;
+	}
 	if (gameStarted === false) {
 		gameStarted = true;
 		intervalTimeCount = setInterval(timeCount, 1000)
