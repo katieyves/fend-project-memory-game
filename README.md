@@ -15,25 +15,25 @@ The Memory Game Project is a part of the Front-End Web Developer Nanodegree Prog
 
 The board contains of 12 shuffled cards.
 
-!(board)[img/board.jpeg]
+![board](img/board.jpeg)
 
 If the cards are matched they remain opened and have green background:
 
-!(matched cards)[img/matched.jpeg]
+![matched cards](img/matched.jpeg)
 
 Opened unmatched cards have blue background:
 
-!(opened unmatched card)[img/opened.jpeg]
+![opened unmatched card](img/opened.jpeg)
 
 The panel above the board shows your current results: star rating, moves number and time.
 
-!(panel with results)[img/resultpanel.jpeg]
+![panel with results](img/resultpanel.jpeg)
 
-The button !(restart)[img/restart.jpeg] restarts the game.
+The button ![restart](img/restart.jpeg) restarts the game.
 
-After all the cards have been matched you can see a new window with your results and then you can play again by pressing the button !(play again button)[img/playagain.jpeg].
+After all the cards have been matched you can see a new window with your results and then you can play again by pressing the button ![play again button](img/playagain.jpeg).
 
-!(Final results window)[img/winbanner.jpeg]
+![Final results window](img/winbanner.jpeg)
 
 
 ## Rules
